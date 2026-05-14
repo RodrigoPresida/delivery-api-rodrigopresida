@@ -1,5 +1,6 @@
 package com.fat.delivery.models;
 
+import java.time.LocalDateTime;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -10,7 +11,6 @@ import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "tb_pedido")
@@ -24,6 +24,7 @@ public class Pedido {
     private Long id;
 
     private LocalDateTime dataHora;
+    private String enderecoEntrega;
     private Double valorTotal;
     private String status; // Ex: PENDENTE, REALIZADO, ENTREGUE
 
