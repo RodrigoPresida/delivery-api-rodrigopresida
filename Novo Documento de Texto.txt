@@ -1,0 +1,35 @@
+FAT
+Página inicial
+Painel
+Meus cursos
+ 
+
+ 
+ 
+Arquitetura de Sistemas (120h)
+Painel
+Meus cursos
+QSP - AS
+Encontro 21 - Tema 11
+Aula 11 – Escalabilidade e Performance
+Ir para o conteúdo principal
+
+Página
+Aula 11 – Escalabilidade e Performance
+Condições de conclusão
+1. Conceitos Utilizados
+Nesta aula, discutimos os conceitos de escalabilidade e performance em sistemas distribuídos, com foco em aplicações web como o sistema de delivery. Escalabilidade refere-se à capacidade do sistema de lidar com aumento de carga, seja verticalmente (melhor hardware) ou horizontalmente (mais servidores). Performance envolve otimizações para reduzir latência, aumentar throughput e melhorar a experiência do usuário.
+
+2. Aplicação no Dia a Dia
+No sistema de delivery, aplicamos técnicas como:
+✅ Cache para reduzir consultas repetidas ao banco de dados
+✅ Balanceamento de carga para distribuir requisições entre servidores
+✅ Uso de CDN para acelerar entrega de conteúdo estático
+✅ Monitoramento contínuo para identificar gargalos e falhas
+✅ Otimização de consultas SQL e índices
+✅ Escalabilidade automática em nuvem para ajustar recursos conforme demanda
+
+Seguir para...
+Seguir para...
+    
+© 2020 - 2026 - Escola Técnica FAT - Todos os direitos reservados

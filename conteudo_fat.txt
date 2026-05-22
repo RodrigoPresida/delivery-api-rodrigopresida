@@ -1,0 +1,1544 @@
+FAT
+Página inicial
+Painel
+Meus cursos
+ 
+
+ 
+ 
+Arquitetura de Sistemas (120h)
+Painel
+Meus cursos
+QSP - AS
+Encontro 4 - Estrtura de Projetos MAVEN Criando o Olá mundo - criando um endpoint para produtos
+Enunciado da Prática: Repositories e Services no Projeto Delivery
+Ir para o conteúdo principal
+
+Página
+Enunciado da Prática: Repositories e Services no Projeto Delivery
+Condições de conclusão
+🎯 CONTEXTO DA PRÁTICA
+🏢 Cenário Real: DeliveryTech em Crescimento
+A startup DeliveryTech está evoluindo rapidamente! Após estabelecer a base do sistema com Spring Boot (Aula 3) e modelar as entidades JPA (Aula 4), chegou o momento crucial de implementar a camada de acesso a dados e regras de negócio.
+
+✅ Situação Atual
+✅ Ambiente configurado com JDK 21
+
+✅ Projeto Spring Boot funcionando
+
+✅ Entidades JPA modeladas
+
+❌ Falta: Persistir dados no banco
+
+❌ Falta: Implementar operações CRUD
+
+❌ Falta: Regras de negócio organizadas
+
+🚨 Problema Real Enfrentado
+O CTO da DeliveryTech te chamou para uma reunião urgente:
+
+🗣️ "Pessoal, temos um problema! Os investidores querem ver o sistema funcionando com dados reais na próxima semana. Precisamos sair do 'Hello World' e implementar funcionalidades que realmente persistam informações no banco de dados. Nossos concorrentes já estão operando e não podemos ficar para trás!"
+
+🧩 Desafios Identificados
+👥 Clientes precisam ser cadastrados e consultados
+
+🍽️ Restaurantes devem ser gerenciados no sistema
+
+🛒 Produtos precisam ser organizados por restaurante
+
+📦 Pedidos devem ser criados e rastreados
+
+🧠 Regras de negócio precisam estar bem organizadas
+
+👨‍💻 Sua Missão como Desenvolvedor
+Implementar a camada de persistência e a camada de serviços do sistema, criando uma base sólida para as funcionalidades de negócio.
+
+📋 ATIVIDADES A SEREM DESENVOLVIDAS
+⚙️ ATIVIDADE 1: CONFIGURAÇÃO DOS REPOSITORIES
+⏱️ Tempo estimado: 25 minutos
+🎯 Objetivo: Criar interfaces Repository com Spring Data JPA
+
+✅ Tarefas
+Criar ClienteRepository:
+
+Estender JpaRepository
+
+Implementar buscas por e-mail e status ativo
+
+Criar RestauranteRepository:
+
+Buscar por nome, categoria, ativos, ordenação por avaliação
+
+Criar ProdutoRepository:
+
+Buscar produtos por restaurante, por categoria e disponibilidade
+
+Criar PedidoRepository:
+
+Buscar pedidos por cliente, filtrar por status/data, relatórios
+
+📦 Entregáveis
+ Interfaces Repository criadas
+
+ Métodos de consulta implementados
+
+ Anotações @Query quando necessário
+
+ Testes básicos funcionando
+
+⚙️ ATIVIDADE 2: IMPLEMENTAÇÃO DOS SERVICES
+⏱️ Tempo estimado: 35 minutos
+🎯 Objetivo: Criar a camada de serviços com regras de negócio organizadas
+
+✅ Tarefas
+ClienteService: Cadastro, validação de e-mail, busca, atualização, inativação
+
+RestauranteService: Gestão, validações, controle de status ativo/inativo
+
+ProdutoService: Cadastro por restaurante, disponibilidade, validação de preço
+
+PedidoService: Criação, cálculo de valores, mudança de status, validações
+
+📦 Entregáveis
+ Classes Service implementadas
+
+ Injeção de dependência configurada
+
+ Regras de negócio implementadas
+
+ Tratamento básico de exceções
+
+⚙️ ATIVIDADE 3: CONTROLLERS REST
+⏱️ Tempo estimado: 30 minutos
+🎯 Objetivo: Criar endpoints REST para exposição das funcionalidades
+
+✅ Tarefas
+ClienteController:
+
+POST /clientes, GET /clientes, GET /clientes/{id}, PUT /clientes/{id}, DELETE /clientes/{id}
+
+RestauranteController:
+
+CRUD completo + buscar por categoria
+
+ProdutoController:
+
+CRUD + buscar produtos por restaurante
+
+PedidoController:
+
+Criar pedido, consultar por cliente, atualizar status
+
+📦 Entregáveis
+ Controllers REST implementados
+
+ Endpoints funcionando
+
+ Validações de entrada aplicadas
+
+ Respostas HTTP adequadas
+
+⚙️ ATIVIDADE 4: TESTES E VALIDAÇÃO
+⏱️ Tempo estimado: 20 minutos
+🎯 Objetivo: Testar todas as funcionalidades implementadas
+
+✅ Tarefas
+Testes via Postman / Insomnia
+
+Verificação no console do banco H2
+
+Testes das regras de negócio (e-mail único, cálculos, status)
+
+📦 Entregáveis
+ Collection de testes Postman/Insomnia
+
+ Screenshots dos testes
+
+ Dados de exemplo no H2
+
+ Funcionalidades validadas com sucesso
+
+⚙️ ATIVIDADE 5: DOCUMENTAÇÃO E FINALIZAÇÃO
+⏱️ Tempo estimado: 10 minutos
+🎯 Objetivo: Documentar e organizar o projeto final
+
+✅ Tarefas
+Atualizar README.md com:
+
+Instruções de teste
+
+Exemplos de uso
+
+Organizar commits e subir no GitHub
+
+Preparar aplicação para demonstração
+
+📦 Entregáveis
+ README.md atualizado
+
+ Repositório GitHub organizado
+
+ Aplicação demonstrável
+
+ Documentação completa
+
+📦 ENTREGÁVEIS FINAIS
+✅ O que deve ser entregue:
+Repositório GitHub Atualizado
+
+Nome: delivery-api-[seunome]
+
+Branch: main
+
+Commits organizados por funcionalidade
+
+ 
+
+Documentação Completa
+
+README.md com instruções, endpoints e exemplos
+
+ 
+
+🗂️ Estrutura de Pastas Esperada
+delivery-api/
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── com/deliverytech/delivery/
+│   │   │       ├── controller/
+│   │   │       │   ├── ClienteController.java
+│   │   │       │   ├── RestauranteController.java
+│   │   │       │   ├── ProdutoController.java
+│   │   │       │   └── PedidoController.java
+│   │   │       ├── service/
+│   │   │       │   ├── ClienteService.java
+│   │   │       │   ├── RestauranteService.java
+│   │   │       │   ├── ProdutoService.java
+│   │   │       │   └── PedidoService.java
+│   │   │       ├── repository/
+│   │   │       │   ├── ClienteRepository.java
+│   │   │       │   ├── RestauranteRepository.java
+│   │   │       │   ├── ProdutoRepository.java
+│   │   │       │   └── PedidoRepository.java
+│   │   │       ├── entity/
+│   │   │       │   └── [entidades da aula anterior]
+│   │   │       └── DeliveryApiApplication.java
+│   │   └── resources/
+│   │       ├── application.properties
+│   │       └── data.sql
+├── postman/
+│   └── DeliveryAPI.postman_collection.json
+├── README.md
+└── pom.xml
+ 
+🚀 DICAS IMPORTANTES
+💡 Dicas de Implementação
+Comece pelos Repositories
+
+Mantenha Services com a lógica de negócio
+
+Teste frequentemente usando H2 Console
+
+Organize commits descritivos para cada funcionalidade
+
+🔧 Recursos Disponíveis
+Console H2: http://localhost:8080/h2-console
+
+📘 Documentação do Spring Data JPA
+
+📎 Exemplos no GitHub do professor
+
+📞 Suporte durante a aula
+
+🧱 "Grandes sistemas são construídos uma camada por vez. Hoje vocês estão construindo a fundação da persistência!"
+
+Seguir para...
+Seguir para...
+    
+© 2020 - 2026 - Escola Técnica FAT - Todos os direitos reservados
+
+FAT
+Página inicial
+Painel
+Meus cursos
+ 
+
+ 
+ 
+Arquitetura de Sistemas (120h)
+Painel
+Meus cursos
+QSP - AS
+Encontro 14 - Aplicação do Vean Validation e Controle de concorrência
+ENUNCIADO - VALIDAÇÕES DE ENTRADA E TRATAMENTO UNIFORME DE ERROS NO PROJETO DELIVERY
+Ir para o conteúdo principal
+
+Página
+ENUNCIADO - VALIDAÇÕES DE ENTRADA E TRATAMENTO UNIFORME DE ERROS NO PROJETO DELIVERY
+Condições de conclusão
+🎯 CONTEXTUALIZAÇÃO
+
+Em sistemas de delivery como iFood, Uber Eats e Rappi, a robustez da aplicação é fundamental para garantir uma experiência confiável aos usuários. Imagine um cenário onde um cliente tenta fazer um pedido com dados inválidos ou um restaurante cadastra um produto sem informações obrigatórias - o sistema precisa responder de forma clara e consistente.
+
+Na vida real, quando você preenche um formulário online e esquece de informar o CEP, o sistema não deve simplesmente "quebrar" ou retornar uma mensagem técnica incompreensível. Em vez disso, deve apresentar uma mensagem clara: "CEP é obrigatório para calcular a taxa de entrega".
+
+Nesta aula, você implementará um sistema robusto de validações e tratamento de erros que:
+• Valida dados de entrada antes de processá-los
+• Retorna mensagens de erro padronizadas e compreensíveis
+• Mantém a aplicação estável mesmo com dados inválidos
+• Facilita a integração com front-ends e aplicações móveis
+
+PROBLEMA REAL A SER RESOLVIDO:
+Atualmente, nossa API de delivery não possui validações adequadas. Um cliente pode tentar cadastrar um pedido sem informar produtos, um restaurante pode ser criado sem nome, e quando erros ocorrem, as mensagens são técnicas e inconsistentes. Precisamos implementar um sistema que garanta a integridade dos dados e forneça feedback claro aos usuários.
+
+
+🎯 OBJETIVOS DE APRENDIZAGEM
+
+Ao final desta aula, você será capaz de:
+
+1. APLICAR VALIDAÇÕES DE ENTRADA
+   • Implementar @Valid e @Validated nos DTOs
+   • Utilizar anotações de validação (@NotNull, @Size, @Min, @Max, @Email, etc.)
+   • Criar validações customizadas para regras de negócio específicas
+
+2. IMPLEMENTAR TRATAMENTO GLOBAL DE EXCEÇÕES
+   • Desenvolver @ControllerAdvice com handlers de exceção
+   • Tratar MethodArgumentNotValidException e EntityNotFoundException
+   • Criar hierarquia de exceções customizadas
+
+3. PADRONIZAR RESPOSTAS DE ERRO
+   • Retornar payloads padronizados de erro (RFC 7807)
+   • Implementar códigos HTTP apropriados para cada tipo de erro
+   • Criar estrutura consistente de mensagens de erro
+
+
+🌟 EXEMPLO DA VIDA REAL
+
+CENÁRIO: VALIDAÇÃO EM PLATAFORMA DE DELIVERY
+
+Imagine que você está desenvolvendo o sistema do iFood. Quando um restaurante tenta cadastrar um novo produto, várias validações devem ocorrer:
+
+1. DADOS OBRIGATÓRIOS:
+   • Nome do produto não pode estar vazio
+   • Preço deve ser maior que zero
+   • Categoria deve ser válida
+   • Descrição deve ter pelo menos 10 caracteres
+
+2. REGRAS DE NEGÓCIO:
+   • Não pode existir dois produtos com o mesmo nome no mesmo restaurante
+   • Preço não pode exceder R$ 500,00
+   • Imagem deve ter formato válido (JPG, PNG)
+
+3. RESPOSTA PADRONIZADA:
+   Quando algo dá errado, o sistema retorna:
+   ```json
+   {
+     "timestamp": "2024-06-04T14:30:00",
+     "status": 400,
+     "error": "Dados inválidos",
+     "message": "Erro de validação nos dados enviados",
+     "path": "/api/produtos",
+     "details": {
+       "nome": "Nome é obrigatório",
+       "preco": "Preço deve ser maior que zero",
+       "categoria": "Categoria inválida"
+     }
+   }
+   ```
+
+BENEFÍCIOS:
+• Front-end sabe exatamente quais campos corrigir
+• Usuário recebe feedback claro e acionável
+• Sistema mantém integridade dos dados
+• Desenvolvedores podem debugar facilmente
+
+
+📋 ATIVIDADES PRÁTICAS
+ATIVIDADE 1: IMPLEMENTAÇÃO DE VALIDAÇÕES DE ENTRADA
+
+OBJETIVO: Implementar validações robustas nos DTOs do projeto delivery
+
+TAREFAS:
+
+1.1 CRIAR DTOs COM VALIDAÇÕES
+• Implementar RestauranteDTO com validações:
+  - Nome: obrigatório, entre 2 e 100 caracteres
+  - Categoria: obrigatória, valores permitidos
+  - Telefone: formato válido (10-11 dígitos)
+  - Taxa de entrega: valor positivo
+  - Tempo de entrega: entre 10 e 120 minutos
+
+• Implementar ProdutoDTO com validações:
+  - Nome: obrigatório, entre 2 e 50 caracteres
+  - Preço: obrigatório, maior que zero, máximo R$ 500
+  - Categoria: obrigatória
+  - Descrição: mínimo 10 caracteres
+
+• Implementar PedidoDTO com validações:
+  - Cliente ID: obrigatório
+  - Restaurante ID: obrigatório
+  - Itens: lista não vazia
+  - Endereço de entrega: obrigatório
+
+1.2 VALIDAÇÕES CUSTOMIZADAS
+• Criar validação @ValidCEP para formato de CEP
+• Implementar @ValidTelefone para números brasileiros
+• Desenvolver @ValidHorarioFuncionamento para formato HH:MM-HH:MM
+• Criar @ValidCategoria para categorias permitidas
+
+ENTREGÁVEIS:
+• Classes DTO com todas as anotações de validação
+• Validadores customizados funcionais
+• Testes unitários das validações
+
+
+ATIVIDADE 2: TRATAMENTO GLOBAL DE EXCEÇÕES
+
+OBJETIVO: Implementar sistema robusto de tratamento de erros
+
+TAREFAS:
+
+2.1 HIERARQUIA DE EXCEÇÕES
+• Criar BusinessException (exceção base para regras de negócio)
+• Implementar EntityNotFoundException (entidade não encontrada)
+• Desenvolver ValidationException (erros de validação)
+• Criar ConflictException (conflitos de dados)
+
+2.2 GLOBAL EXCEPTION HANDLER
+• Implementar @ControllerAdvice GlobalExceptionHandler
+• Tratar MethodArgumentNotValidException (validações @Valid)
+• Tratar EntityNotFoundException (retornar 404)
+• Tratar BusinessException (retornar 400)
+• Tratar ConflictException (retornar 409)
+• Tratar Exception genérica (retornar 500)
+
+ENTREGÁVEIS:
+• Classes de exceção customizadas
+• GlobalExceptionHandler completo
+• Testes de integração dos handlers
+
+
+ATIVIDADE 3: PADRONIZAÇÃO DE RESPOSTAS DE ERRO
+
+OBJETIVO: Criar estrutura padronizada para respostas de erro (RFC 7807)
+
+TAREFAS:
+
+3.1 ESTRUTURA DE ERRO PADRONIZADA
+• Implementar ErrorResponse seguindo RFC 7807:
+  - timestamp: data/hora do erro
+  - status: código HTTP
+  - error: tipo do erro
+  - message: mensagem principal
+  - path: endpoint que gerou o erro
+  - details: detalhes específicos (para validações)
+
+3.2 CÓDIGOS HTTP APROPRIADOS
+• 400 Bad Request: dados inválidos
+• 404 Not Found: entidade não encontrada
+• 409 Conflict: conflito de dados
+• 422 Unprocessable Entity: regra de negócio violada
+• 500 Internal Server Error: erro interno
+
+ENTREGÁVEIS:
+• Classe ErrorResponse padronizada
+• Mapeamento correto de códigos HTTP
+• Documentação dos tipos de erro
+
+
+ATIVIDADE 4: TESTES E VALIDAÇÃO DO SISTEMA
+
+OBJETIVO: Validar o funcionamento completo do sistema de validações
+
+TAREFAS:
+
+4.1 TESTES DE CENÁRIOS DE ERRO
+• Testar cadastro de restaurante com dados inválidos
+• Validar criação de produto com preço negativo
+• Testar pedido sem itens
+• Verificar busca de entidade inexistente
+• Validar conflito de dados únicos
+
+CENÁRIOS DE TESTE OBRIGATÓRIOS:
+1. POST /api/restaurantes com nome vazio → 400 Bad Request
+2. POST /api/produtos com preço -10 → 400 Bad Request
+3. GET /api/restaurantes/999 → 404 Not Found
+4. POST /api/pedidos sem itens → 400 Bad Request
+5. POST /api/restaurantes com telefone inválido → 400 Bad Request
+
+ENTREGÁVEIS:
+• Collection Postman com todos os cenários de teste
+• Evidências de respostas padronizadas
+• Relatório de testes executados
+
+
+
+
+
+🛠️ RECURSOS NECESSÁRIOS
+
+DEPENDÊNCIAS MAVEN:
+• spring-boot-starter-validation
+• spring-boot-starter-web
+• spring-boot-starter-test
+
+FERRAMENTAS:
+• VS Code ou IntelliJ IDEA
+• Postman ou Insomnia
+• Git para versionamento
+
+CONHECIMENTOS PRÉVIOS:
+• Spring Boot básico
+• Anotações Java
+• REST APIs
+• JSON
+
+
+📦 ESTRUTURA DE ENTREGA
+
+REPOSITÓRIO GIT DEVE CONTER:
+
+src/main/java/com/deliverytech/
+├── dto/
+│   ├── RestauranteDTO.java (com validações)
+│   ├── ProdutoDTO.java (com validações)
+│   ├── PedidoDTO.java (com validações)
+│   └── ErrorResponse.java
+├── exception/
+│   ├── BusinessException.java
+│   ├── EntityNotFoundException.java
+│   ├── ValidationException.java
+│   ├── ConflictException.java
+│   └── GlobalExceptionHandler.java
+├── validation/
+│   ├── ValidCEP.java
+│   ├── ValidTelefone.java
+│   ├── ValidHorarioFuncionamento.java
+│   └── ValidCategoria.java
+└── controller/
+    ├── RestauranteController.java (atualizado)
+    ├── ProdutoController.java (atualizado)
+    └── PedidoController.java (atualizado)
+
+DOCUMENTAÇÃO:
+• README.md com instruções de execução
+• Collection Postman com cenários de teste
+• Evidências de testes (screenshots)
+
+PRAZO DE ENTREGA: Final da aula (90 minutos)
+
+Seguir para...
+Seguir para...
+    
+© 2020 - 2026 - Escola Técnica FAT - Todos os direitos reservados
+
+
+
+FAT
+Página inicial
+Painel
+Meus cursos
+ 
+
+ 
+ 
+Arquitetura de Sistemas (120h)
+Painel
+Meus cursos
+QSP - AS
+Encontro 15 - Tema 8
+Aula 8 – Documentação da API com Swagger
+Ir para o conteúdo principal
+
+Página
+Aula 8 – Documentação da API com Swagger
+Condições de conclusão
+1. Conceitos Utilizados
+Nesta aula, exploramos a documentação de APIs RESTful utilizando o Swagger/OpenAPI. O Swagger é uma ferramenta que permite:
+
+• Gerar documentação interativa e visual da API
+• Descrever endpoints, parâmetros, respostas e exemplos
+• Testar endpoints diretamente pela interface
+
+No Spring Boot, utilizamos a biblioteca **SpringDoc** (sucessora do Swagger UI) para:
+- Gerar documentação automaticamente a partir de anotações
+- Personalizar a interface com informações do projeto
+- Suportar versões múltiplas da API
+
+2. Aplicação no Dia a Dia
+No sistema de delivery, a documentação com Swagger é essencial para:
+
+✅ Desenvolvedores: Testar endpoints sem código adicional
+✅ Clientes: Entender como integrar o sistema a outros sistemas
+✅ Times de QA: Validar comportamento de endpoints
+✅ Gerentes: Visualizar funcionalidades disponíveis
+
+Exemplo de uso:
+- Documentar o endpoint `/api/v1/pedidos` com descrição, parâmetros e exemplos de requisição/resposta
+
+Seguir para...
+Seguir para...
+    
+© 2020 - 2026 - Escola Técnica FAT - Todos os direitos reservados	
+
+
+FAT
+Página inicial
+Painel
+Meus cursos
+ 
+
+ 
+ 
+Arquitetura de Sistemas (120h)
+Painel
+Meus cursos
+QSP - AS
+Encontro 16 - Utilização do Spring Security para login de acesso
+ENUNCIADO - SEGURANÇA E AUTENTICAÇÃO JWT NO PROJETO DELIVERY
+Ir para o conteúdo principal
+
+Página
+ENUNCIADO - SEGURANÇA E AUTENTICAÇÃO JWT NO PROJETO DELIVERY
+Condições de conclusão
+ 
+🔐 CONTEXTUALIZAÇÃO
+
+Em plataformas de delivery como iFood, Uber Eats e Rappi, a segurança é fundamental para proteger dados sensíveis dos usuários, restaurantes e entregadores. Imagine um cenário onde qualquer pessoa pode acessar informações de pedidos, dados pessoais de clientes ou alterar preços de produtos sem autorização - isso seria um caos total!
+
+Na vida real, quando você faz login no aplicativo do iFood, o sistema precisa:
+• Verificar se você é realmente quem diz ser (autenticação)
+• Determinar o que você pode ou não fazer (autorização)
+• Manter sua sessão segura durante toda a navegação
+• Proteger suas informações pessoais e de pagamento
+
+PROBLEMA REAL A SER RESOLVIDO:
+Atualmente, nossa API de delivery está completamente aberta - qualquer pessoa pode criar, visualizar, editar ou deletar restaurantes, produtos e pedidos. Isso representa um risco enorme de segurança. Precisamos implementar um sistema robusto de autenticação e autorização que:
+
+1. CONTROLE DE ACESSO POR PERFIL:
+   • Clientes: podem apenas fazer pedidos e ver seu histórico
+   • Restaurantes: podem gerenciar seus produtos e ver pedidos recebidos
+   • Administradores: têm acesso total ao sistema
+   • Entregadores: podem ver pedidos para entrega
+
+2. PROTEÇÃO DE DADOS SENSÍVEIS:
+   • Informações pessoais dos usuários
+   • Dados de pagamento e transações
+   • Relatórios financeiros dos restaurantes
+   • Métricas do sistema
+
+3. RASTREABILIDADE:
+   • Quem fez cada ação no sistema
+   • Quando cada operação foi realizada
+   • Logs de segurança para auditoria
+
+EXEMPLO PRÁTICO:
+Quando um restaurante tenta acessar a lista de seus produtos, o sistema deve:
+1. Verificar se o token JWT é válido
+2. Extrair o ID do restaurante do token
+3. Permitir acesso apenas aos produtos desse restaurante específico
+4. Bloquear tentativas de acesso a produtos de outros restaurantes
+
+
+🎯 OBJETIVOS DE APRENDIZAGEM
+
+Ao final desta aula, você será capaz de:
+
+1. CONFIGURAR SPRING SECURITY
+   • Implementar configuração de segurança personalizada
+   • Definir endpoints públicos e protegidos
+   • Configurar filtros de autenticação
+   • Gerenciar usuários e perfis de acesso
+
+2. IMPLEMENTAR AUTENTICAÇÃO JWT
+   • Gerar tokens JWT seguros
+   • Validar tokens em requisições
+   • Implementar refresh tokens
+   • Gerenciar expiração de tokens
+
+3. APLICAR AUTORIZAÇÃO POR PERFIS
+   • Definir roles (CLIENTE, RESTAURANTE, ADMIN, ENTREGADOR)
+   • Proteger endpoints por perfil de usuário
+   • Implementar controle de acesso granular
+   • Validar permissões em tempo de execução
+
+4. CRIAR SISTEMA DE USUÁRIOS
+   • Implementar entidade Usuario com perfis
+   • Criar endpoints de registro e login
+   • Gerenciar senhas com hash seguro
+   • Implementar recuperação de senha
+
+
+🌟 EXEMPLO DA VIDA REAL
+
+CENÁRIO: SISTEMA DE SEGURANÇA DO iFOOD
+
+Imagine que você está desenvolvendo o sistema de segurança do iFood. Vamos analisar como funciona na prática:
+
+1. PROCESSO DE LOGIN:
+   • Cliente abre o app e insere email/senha
+   • Sistema valida credenciais no banco de dados
+   • Se válidas, gera um token JWT com informações do usuário
+   • Token é enviado para o app e armazenado localmente
+   • Todas as próximas requisições incluem este token
+
+2. ESTRUTURA DO TOKEN JWT:
+   ```json
+   {
+     "sub": "cliente123@email.com",
+     "userId": 456,
+     "role": "CLIENTE",
+     "restauranteId": null,
+     "iat": 1717516800,
+     "exp": 1717603200
+   }
+   ```
+
+3. CONTROLE DE ACESSO POR PERFIL:
+
+   CLIENTE (role: CLIENTE):
+   • ✅ GET /api/restaurantes (listar restaurantes)
+   • ✅ GET /api/produtos (ver cardápios)
+   • ✅ POST /api/pedidos (fazer pedidos)
+   • ✅ GET /api/pedidos/meus (ver seus pedidos)
+   • ❌ POST /api/produtos (criar produtos)
+   • ❌ GET /api/pedidos (ver todos os pedidos)
+
+   RESTAURANTE (role: RESTAURANTE):
+   • ✅ GET /api/produtos/meus (ver seus produtos)
+   • ✅ POST /api/produtos (criar produtos)
+   • ✅ GET /api/pedidos/recebidos (pedidos para seu restaurante)
+   • ❌ GET /api/pedidos (ver pedidos de outros restaurantes)
+   • ❌ DELETE /api/restaurantes/{id} (deletar outros restaurantes)
+
+   ADMIN (role: ADMIN):
+   • ✅ Acesso total a todos os endpoints
+   • ✅ Relatórios e métricas do sistema
+   • ✅ Gerenciamento de usuários
+
+4. FLUXO DE AUTORIZAÇÃO:
+   ```
+   1. Cliente faz requisição: GET /api/pedidos/meus
+   2. Filtro JWT extrai token do header Authorization
+   3. Valida assinatura e expiração do token
+   4. Extrai userId e role do token
+   5. Controller verifica se role tem permissão
+   6. Se autorizado, executa a operação
+   7. Retorna apenas dados do próprio cliente
+   ```
+
+5. BENEFÍCIOS DO SISTEMA:
+   • Segurança: dados protegidos por autenticação
+   • Escalabilidade: tokens stateless (sem sessão no servidor)
+   • Flexibilidade: diferentes perfis de acesso
+   • Auditoria: rastreabilidade de todas as ações
+   • Performance: validação rápida de tokens
+
+
+📋 ATIVIDADES PRÁTICAS
+ATIVIDADE 1: CONFIGURAÇÃO DO SPRING SECURITY
+
+OBJETIVO: Implementar configuração básica de segurança com Spring Security
+
+TAREFAS:
+
+1.1 ENTIDADE USUARIO
+• Criar entidade Usuario com campos:
+  - id (Long, chave primária)
+  - email (String, único)
+  - senha (String, hash BCrypt)
+  - nome (String)
+  - role (Enum: CLIENTE, RESTAURANTE, ADMIN, ENTREGADOR)
+  - ativo (Boolean)
+  - dataCriacao (LocalDateTime)
+  - restauranteId (Long, nullable - apenas para role RESTAURANTE)
+
+• Implementar UserDetails interface na entidade Usuario
+• Criar UsuarioRepository com método findByEmail
+
+1.2 CONFIGURAÇÃO DE SEGURANÇA
+• Implementar SecurityConfig com @EnableWebSecurity
+• Configurar endpoints públicos:
+  - POST /api/auth/login
+  - POST /api/auth/register
+  - GET /api/restaurantes (listar restaurantes)
+  - GET /api/produtos (listar produtos)
+  - GET /actuator/health
+
+• Configurar endpoints protegidos (todos os outros)
+• Desabilitar CSRF para APIs REST
+• Configurar CORS para permitir requisições do frontend
+• Implementar PasswordEncoder com BCrypt
+
+ENTREGÁVEIS:
+• Entidade Usuario implementando UserDetails
+• UsuarioRepository funcional
+• SecurityConfig completa
+• Testes de endpoints públicos e protegidos
+
+
+ATIVIDADE 2: IMPLEMENTAÇÃO JWT
+
+OBJETIVO: Criar sistema completo de geração e validação de tokens JWT
+
+TAREFAS:
+
+2.1 UTILITÁRIO JWT
+• Implementar JwtUtil com métodos:
+  - generateToken(UserDetails userDetails): gerar token
+  - extractUsername(String token): extrair email do token
+  - extractClaim(String token, Function claimsResolver): extrair claims
+  - isTokenExpired(String token): verificar expiração
+  - validateToken(String token, UserDetails userDetails): validar token
+
+• Configurar chave secreta segura (mínimo 256 bits)
+• Definir tempo de expiração (24 horas)
+• Incluir claims customizados: userId, role, restauranteId
+
+2.2 FILTRO JWT 
+• Implementar JwtAuthenticationFilter extends OncePerRequestFilter
+• Extrair token do header Authorization (Bearer token)
+• Validar token e carregar usuário no SecurityContext
+• Tratar exceções de token inválido/expirado
+• Permitir passagem para endpoints públicos
+
+ENTREGÁVEIS:
+• Classe JwtUtil completa e testada
+• JwtAuthenticationFilter funcional
+• Configuração do filtro no SecurityConfig
+• Testes de geração e validação de tokens
+
+
+ATIVIDADE 3: ENDPOINTS DE AUTENTICAÇÃO
+
+OBJETIVO: Criar endpoints para login, registro e gerenciamento de usuários
+
+TAREFAS:
+
+3.1 DTOs DE AUTENTICAÇÃO
+• Criar LoginRequest com email e senha
+• Criar LoginResponse com token, tipo, expiração e dados do usuário
+• Criar RegisterRequest com nome, email, senha, role
+• Criar UserResponse com dados públicos do usuário (sem senha)
+
+3.2 CONTROLLER DE AUTENTICAÇÃO
+• Implementar AuthController com endpoints:
+
+  POST /api/auth/login:
+  - Validar credenciais com AuthenticationManager
+  - Gerar token JWT para usuário válido
+  - Retornar LoginResponse com token e dados do usuário
+  - Tratar erro de credenciais inválidas
+
+  POST /api/auth/register:
+  - Validar se email não existe
+  - Criptografar senha com BCrypt
+  - Salvar novo usuário no banco
+  - Retornar UserResponse (sem token - usuário deve fazer login)
+
+  GET /api/auth/me:
+  - Retornar dados do usuário logado
+  - Extrair informações do token JWT
+  - Endpoint protegido (requer autenticação)
+
+ENTREGÁVEIS:
+• DTOs de autenticação implementados
+• AuthController completo
+• Testes de login e registro
+• Validação de segurança nos endpoints
+
+
+ATIVIDADE 4: AUTORIZAÇÃO POR PERFIS
+
+OBJETIVO: Implementar controle de acesso baseado em roles
+
+TAREFAS:
+
+4.1 ANOTAÇÕES DE SEGURANÇA
+• Atualizar controllers existentes com @PreAuthorize:
+
+  RestauranteController:
+  - GET /api/restaurantes: público
+  - POST /api/restaurantes: hasRole('ADMIN')
+  - PUT /api/restaurantes/{id}: hasRole('ADMIN') or (hasRole('RESTAURANTE') and @restauranteService.isOwner(#id))
+  - DELETE /api/restaurantes/{id}: hasRole('ADMIN')
+
+  ProdutoController:
+  - GET /api/produtos: público
+  - POST /api/produtos: hasRole('RESTAURANTE') or hasRole('ADMIN')
+  - PUT /api/produtos/{id}: hasRole('ADMIN') or @produtoService.isOwner(#id)
+  - DELETE /api/produtos/{id}: hasRole('ADMIN') or @produtoService.isOwner(#id)
+
+  PedidoController:
+  - GET /api/pedidos: hasRole('ADMIN')
+  - GET /api/pedidos/meus: hasRole('CLIENTE')
+  - GET /api/pedidos/restaurante: hasRole('RESTAURANTE')
+  - POST /api/pedidos: hasRole('CLIENTE')
+
+4.2 SERVIÇOS DE AUTORIZAÇÃO
+• Implementar métodos de verificação de propriedade:
+  - RestauranteService.isOwner(Long restauranteId): verificar se usuário logado é dono
+  - ProdutoService.isOwner(Long produtoId): verificar se produto pertence ao restaurante do usuário
+  - PedidoService.canAccess(Long pedidoId): verificar se usuário pode acessar pedido
+
+• Criar utilitário SecurityUtils para:
+  - getCurrentUser(): obter usuário logado
+  - getCurrentUserId(): obter ID do usuário logado
+  - hasRole(String role): verificar se usuário tem role específica
+
+ENTREGÁVEIS:
+• Controllers atualizados com @PreAuthorize
+• Serviços de autorização implementados
+• SecurityUtils funcional
+• Testes de autorização por perfil
+
+
+🧪 CENÁRIOS DE TESTE OBRIGATÓRIOS
+
+CENÁRIOS QUE DEVEM SER TESTADOS:
+
+1. REGISTRO DE USUÁRIO:
+   POST /api/auth/register
+   Body: {
+     "nome": "João Silva",
+     "email": "joao@email.com",
+     "senha": "123456",
+     "role": "CLIENTE"
+   }
+   Resultado esperado: 201 Created
+
+2. LOGIN VÁLIDO:
+   POST /api/auth/login
+   Body: {
+     "email": "joao@email.com",
+     "senha": "123456"
+   }
+   Resultado esperado: 200 OK com token JWT
+
+3. LOGIN INVÁLIDO:
+   POST /api/auth/login
+   Body: {
+     "email": "joao@email.com",
+     "senha": "senhaerrada"
+   }
+   Resultado esperado: 401 Unauthorized
+
+4. ACESSO A ENDPOINT PROTEGIDO SEM TOKEN:
+   GET /api/pedidos/meus
+   Resultado esperado: 401 Unauthorized
+
+5. ACESSO A ENDPOINT PROTEGIDO COM TOKEN VÁLIDO:
+   GET /api/auth/me
+   Header: Authorization: Bearer {token}
+   Resultado esperado: 200 OK com dados do usuário
+
+6. ACESSO NEGADO POR ROLE:
+   POST /api/produtos (usuário com role CLIENTE)
+   Header: Authorization: Bearer {token_cliente}
+   Resultado esperado: 403 Forbidden
+
+7. ACESSO PERMITIDO POR ROLE:
+   POST /api/produtos (usuário com role RESTAURANTE)
+   Header: Authorization: Bearer {token_restaurante}
+   Resultado esperado: 201 Created
+
+8. TOKEN EXPIRADO:
+   GET /api/auth/me (com token expirado)
+   Resultado esperado: 401 Unauthorized
+
+9. ENDPOINT PÚBLICO ACESSÍVEL:
+   GET /api/restaurantes
+   Resultado esperado: 200 OK (sem necessidade de token)
+
+10. VERIFICAÇÃO DE PROPRIEDADE:
+    PUT /api/produtos/1 (produto de outro restaurante)
+    Header: Authorization: Bearer {token_restaurante}
+    Resultado esperado: 403 Forbidden
+
+
+🛠️ RECURSOS NECESSÁRIOS
+
+DEPENDÊNCIAS MAVEN:
+• spring-boot-starter-security
+• spring-boot-starter-web
+• spring-boot-starter-data-jpa
+• io.jsonwebtoken:jjwt-api:0.11.5
+• io.jsonwebtoken:jjwt-impl:0.11.5
+• io.jsonwebtoken:jjwt-jackson:0.11.5
+• spring-boot-starter-validation
+
+FERRAMENTAS:
+• VS Code ou IntelliJ IDEA
+• Postman ou Insomnia
+• H2 Database Console
+• Git para versionamento
+
+CONHECIMENTOS PRÉVIOS:
+• Spring Boot e Spring Security
+• JWT (JSON Web Tokens)
+• Autenticação e autorização
+• REST APIs
+• JPA e banco de dados
+
+
+📦 ESTRUTURA DE ENTREGA
+
+REPOSITÓRIO GIT DEVE CONTER:
+
+src/main/java/com/deliverytech/
+├── entity/
+│   └── Usuario.java (implementando UserDetails)
+├── repository/
+│   └── UsuarioRepository.java
+├── config/
+│   └── SecurityConfig.java
+├── security/
+│   ├── JwtUtil.java
+│   ├── JwtAuthenticationFilter.java
+│   └── SecurityUtils.java
+├── dto/
+│   ├── LoginRequest.java
+│   ├── LoginResponse.java
+│   ├── RegisterRequest.java
+│   └── UserResponse.java
+├── controller/
+│   └── AuthController.java
+└── service/
+    ├── UsuarioService.java
+    └── AuthService.java
+
+CONFIGURAÇÃO:
+• application.properties com configurações JWT
+• Dados de usuários de teste (via data.sql)
+
+DOCUMENTAÇÃO:
+• README.md com instruções de uso
+• Collection Postman com todos os cenários de teste
+• Evidências de testes (screenshots)
+
+PRAZO DE ENTREGA: Final da aula (90 minutos)
+
+
+⚙️ CONFIGURAÇÕES IMPORTANTES
+
+APPLICATION.PROPERTIES:
+
+# JWT Configuration
+jwt.secret=mySecretKey123456789012345678901234567890
+jwt.expiration=86400000
+
+# Security Configuration
+spring.security.user.name=admin
+spring.security.user.password=admin
+
+# Database Configuration
+spring.datasource.url=jdbc:h2:mem:testdb
+spring.h2.console.enabled=true
+spring.jpa.hibernate.ddl-auto=create-drop
+
+# Logging
+logging.level.org.springframework.security=DEBUG
+logging.level.com.deliverytech=DEBUG
+
+DATA.SQL (usuários de teste):
+
+INSERT INTO usuario (id, nome, email, senha, role, ativo, data_criacao, restaurante_id) VALUES
+(1, 'Admin Sistema', 'admin@delivery.com', '$2a$10$N.zmdr9k7uOCQb376NoUnuTJ8iKXulpZR8J4OY6Nd4EMCFyZw4ufC', 'ADMIN', true, NOW(), null),
+(2, 'João Cliente', 'joao@email.com', '$2a$10$N.zmdr9k7uOCQb376NoUnuTJ8iKXulpZR8J4OY6Nd4EMCFyZw4ufC', 'CLIENTE', true, NOW(), null),
+(3, 'Pizza Palace', 'pizza@palace.com', '$2a$10$N.zmdr9k7uOCQb376NoUnuTJ8iKXulpZR8J4OY6Nd4EMCFyZw4ufC', 'RESTAURANTE', true, NOW(), 1),
+(4, 'Carlos Entregador', 'carlos@entrega.com', '$2a$10$N.zmdr9k7uOCQb376NoUnuTJ8iKXulpZR8J4OY6Nd4EMCFyZw4ufC', 'ENTREGADOR', true, NOW(), null);
+
+-- Senha para todos: "123456"
+
+
+📝 OBSERVAÇÕES FINAIS
+
+PONTOS CRÍTICOS PARA IMPLEMENTAÇÃO:
+
+1. SEGURANÇA DA CHAVE JWT:
+   • Use chave secreta forte (mínimo 256 bits)
+   • Nunca exponha a chave em logs ou código público
+   • Configure tempo de expiração adequado
+
+2. HASH DE SENHAS:
+   • SEMPRE use BCrypt para hash de senhas
+   • Nunca armazene senhas em texto plano
+   • Configure strength adequado (10-12)
+
+3. VALIDAÇÃO DE TOKENS:
+   • Verifique assinatura, expiração e formato
+   • Trate exceções de token inválido adequadamente
+   • Implemente refresh token para melhor UX
+
+4. AUTORIZAÇÃO GRANULAR:
+   • Verifique não apenas role, mas propriedade de recursos
+   • Implemente verificações no nível de serviço
+   • Use @PreAuthorize para controle fino
+
+5. TESTES DE SEGURANÇA:
+   • Teste todos os cenários de autenticação
+   • Verifique autorização por perfil
+   • Teste tentativas de acesso não autorizado
+
+6. BOAS PRÁTICAS:
+   • Use HTTPS em produção
+   • Implemente rate limiting
+   • Configure CORS adequadamente
+   • Monitore tentativas de acesso suspeitas
+
+SUCESSO NA IMPLEMENTAÇÃO! 🔐
+
+Seguir para...
+Seguir para...
+    
+© 2020 - 2026 - Escola Técnica FAT - Todos os direitos reservados
+
+
+FAT
+Página inicial
+Painel
+Meus cursos
+ 
+
+ 
+ 
+Arquitetura de Sistemas (120h)
+Painel
+Meus cursos
+QSP - AS
+Encontro 19 - Tema 10
+Aula 10 – Deploy e Ambientes com CI/CD
+Ir para o conteúdo principal
+
+Página
+Aula 10 – Deploy e Ambientes com CI/CD
+Condições de conclusão
+1. Conceitos Utilizados
+Nesta aula, exploramos os processos de implantação (deploy) e os diferentes ambientes de um sistema, além da integração contínua e entrega contínua (CI/CD). Os principais tópicos abordados foram:
+
+• **Ambientes de Desenvolvimento**: Local (dev), Homologação (staging) e Produção (prod)
+• **CI/CD**: Automação de build, testes e deploy com GitHub Actions
+• **Containerização**: Uso do Docker para empacotar a aplicação e suas dependências
+• **Orquestração**: Gerenciamento de containers com Docker Compose
+
+O fluxo CI/CD implementado inclui:
+- Build automático ao fazer push no repositório
+- Execução de testes automatizados
+- Deploy em diferentes ambientes conforme a branch
+
+2. Aplicação no Dia a Dia
+No sistema de delivery, esses conceitos são aplicados para:
+
+✅ **Desenvolvimento**: Cada desenvolvedor trabalha em containers locais idênticos
+✅ **Testes**: Ambiente de staging replica a produção para validações
+✅ **Produção**: Deploy automatizado com rollback em caso de falha
+✅ **Monitoramento**: Health checks e métricas em tempo real
+
+Exemplo de pipeline CI/CD:
+1. Push na branch → dispara GitHub Actions
+2. Build da aplicação e dos containers
+3. Execução dos testes automatizados
+4. Deploy no ambiente de staging
+5. Aprovação manual → deploy em produção
+
+Seguir para...
+Seguir para...
+    
+© 2020 - 2026 - Escola Técnica FAT - Todos os direitos reservados
+
+
+FAT
+Página inicial
+Painel
+Meus cursos
+ 
+
+ 
+ 
+Arquitetura de Sistemas (120h)
+Painel
+Meus cursos
+QSP - AS
+Encontro 20 - Aplicação de testes automatizados
+ENUNCIADO - TESTES AUTOMATIZADOS COM SPRING BOOT
+Ir para o conteúdo principal
+
+Página
+ENUNCIADO - TESTES AUTOMATIZADOS COM SPRING BOOT
+Condições de conclusão
+ 
+🎯 CONTEXTUALIZAÇÃO
+
+Na era do desenvolvimento ágil e DevOps, a qualidade do software é fundamental para o sucesso de qualquer aplicação.
+Testes automatizados são a base para garantir que mudanças no código não introduzam regressões e que novas
+funcionalidades funcionem conforme esperado.
+
+No contexto do nosso projeto de delivery, imagine que você é o desenvolvedor responsável por uma funcionalidade
+crítica: o processamento de pedidos. Cada vez que um cliente faz um pedido, várias operações acontecem:
+- Validação dos dados do cliente
+- Verificação de disponibilidade dos produtos
+- Cálculo do valor total
+- Atualização do estoque
+- Persistência no banco de dados
+
+Sem testes automatizados, como você garantiria que essas operações funcionam corretamente após cada mudança no código?
+
+
+🚨 PROBLEMATIZAÇÃO - CENÁRIO REAL
+
+SITUAÇÃO: Você trabalha em uma startup de delivery que está crescendo rapidamente. A equipe de desenvolvimento
+precisa implementar novas funcionalidades semanalmente, mas recentemente alguns bugs críticos chegaram à produção:
+
+📱 CASO 1 - Bug no Cálculo de Preços:
+Um desenvolvedor alterou a lógica de desconto e, sem perceber, quebrou o cálculo de preços para pedidos com mais
+de 3 itens. Resultado: clientes pagaram valores incorretos por 2 dias até o bug ser descoberto.
+
+🏪 CASO 2 - Falha na Validação de Estoque:
+Uma mudança na validação de estoque permitiu que produtos esgotados fossem vendidos. Resultado: 50 pedidos
+cancelados e clientes insatisfeitos.
+
+👥 CASO 3 - Regressão no Cadastro de Clientes:
+Uma atualização na API quebrou o endpoint de cadastro de novos clientes. Resultado: nenhum cliente novo conseguiu
+se registrar por 6 horas.
+
+💡 REFLEXÃO:
+- Como esses problemas poderiam ter sido evitados?
+- Qual o custo de bugs em produção vs. tempo investido em testes?
+- Como garantir que mudanças futuras não quebrem funcionalidades existentes?
+- Como validar que novas funcionalidades funcionam corretamente antes do deploy?
+
+🎯 SOLUÇÃO:
+Implementar uma suíte robusta de testes automatizados que:
+- Testa unidades individuais de código (testes unitários)
+- Valida a integração entre componentes (testes de integração)
+- Garante que a API funciona corretamente (testes de controller)
+- Executa automaticamente a cada mudança no código
+
+
+🎯 OBJETIVOS DE APRENDIZAGEM
+
+Ao final desta aula, você será capaz de:
+
+1. 🧪 TESTES UNITÁRIOS:
+   • Compreender a importância dos testes unitários no desenvolvimento
+   • Implementar testes para serviços usando JUnit 5 e Mockito
+   • Aplicar técnicas de mock para isolar dependências
+   • Validar comportamentos e exceções em métodos de negócio
+
+2. 🔗 TESTES DE INTEGRAÇÃO:
+   • Criar testes de integração para controllers usando MockMvc
+   • Validar respostas JSON e códigos de status HTTP
+   • Testar fluxos completos de requisição-resposta
+   • Configurar ambiente de teste com banco H2 em memória
+
+3. 📊 COBERTURA E QUALIDADE:
+   • Configurar relatórios de cobertura de código
+   • Interpretar métricas de qualidade de testes
+   • Estabelecer metas de cobertura mínima (80%)
+   • Identificar código não testado e áreas de risco
+
+4. ⚙️ CONFIGURAÇÃO DE AMBIENTE:
+   • Configurar perfis específicos para testes
+   • Separar configurações de teste e produção
+   • Usar anotações específicas do Spring Boot Test
+   • Implementar setup e teardown adequados
+
+
+🌍 EXEMPLOS DA VIDA REAL
+
+🏢 EMPRESAS QUE INVESTEM EM TESTES:
+
+1. 🚗 TESLA - Sistema de Piloto Automático:
+   • Milhões de testes automatizados para validar algoritmos de direção
+   • Testes simulam cenários de trânsito complexos
+   • Cada atualização passa por bateria de 100.000+ testes
+   • Resultado: Redução de 90% em acidentes
+
+2. 🛒 AMAZON - Sistema de E-commerce:
+   • 50.000+ testes executados a cada deploy
+   • Testes validam desde cálculo de frete até processamento de pagamentos
+   • Cobertura de código acima de 85% em componentes críticos
+   • Resultado: 99.99% de disponibilidade do sistema
+
+3. 🏦 NUBANK - Sistema Bancário:
+   • Testes automatizados para todas as transações financeiras
+   • Validação de segurança e conformidade regulatória
+   • Testes de carga simulam milhões de transações simultâneas
+   • Resultado: Zero falhas críticas em produção nos últimos 2 anos
+
+📈 ESTATÍSTICAS DA INDÚSTRIA:
+• Empresas com boa cobertura de testes têm 60% menos bugs em produção
+• Custo de corrigir bug em produção é 100x maior que em desenvolvimento
+• Equipes com testes automatizados entregam 50% mais funcionalidades
+• 90% das empresas unicórnio têm cobertura de testes acima de 80%
+
+🎯 BENEFÍCIOS PRÁTICOS:
+• Confiança para refatorar código
+• Documentação viva do comportamento esperado
+• Detecção precoce de problemas
+• Facilita integração contínua e deploy automático
+• Reduz tempo de debugging e manutenção
+
+
+📋 ATIVIDADES PRÁTICAS
+🧪 ATIVIDADE 1: TESTES UNITÁRIOS PARA SERVIÇOS
+
+OBJETIVO: Implementar testes unitários completos para ClienteService e PedidoService
+
+TAREFAS:
+1.1. Configurar Dependências de Teste
+    • Adicionar dependências JUnit 5, Mockito e Spring Boot Test no pom.xml
+    • Configurar perfil de teste no application-test.properties
+    • Criar estrutura de diretórios para testes
+
+1.2. Implementar ClienteServiceTest
+    • Testar método salvarCliente() com dados válidos
+    • Testar validação de email duplicado
+    • Testar busca de cliente por ID (existente e inexistente)
+    • Testar listagem de clientes com paginação
+    • Usar @Mock para simular dependências do repository
+
+1.3. Implementar PedidoServiceTest
+    • Testar criação de pedido com produtos válidos
+    • Testar validação de estoque insuficiente
+    • Testar cálculo correto do valor total
+    • Testar atualização de status do pedido
+    • Testar cenário de rollback em caso de erro
+    • Validar que exceções são lançadas corretamente
+
+CRITÉRIOS DE AVALIAÇÃO:
+• Uso correto de anotações @ExtendWith, @Mock, @InjectMocks
+• Implementação de cenários positivos e negativos
+• Verificação de comportamentos com verify()
+• Tratamento adequado de exceções
+• Organização e nomenclatura dos testes
+
+
+🔗 ATIVIDADE 2: TESTES DE INTEGRAÇÃO PARA CONTROLLERS
+
+OBJETIVO: Criar testes de integração que validam o comportamento completo dos controllers
+
+TAREFAS:
+2.1. Configurar Ambiente de Teste de Integração
+    • Configurar @SpringBootTest e @AutoConfigureTestDatabase
+    • Configurar banco H2 em memória para testes
+    • Implementar @TestConfiguration para dados de teste
+    • Configurar @DirtiesContext para isolamento entre testes
+
+2.2. Implementar ClienteControllerIT
+    • Testar POST /api/clientes (criação com dados válidos e inválidos)
+    • Testar GET /api/clientes/{id} (busca existente e inexistente)
+    • Testar GET /api/clientes (listagem com paginação)
+    • Testar PUT /api/clientes/{id} (atualização)
+    • Validar códigos de status HTTP (200, 201, 400, 404)
+    • Validar estrutura JSON das respostas
+
+2.3. Implementar PedidoControllerIT
+    • Testar POST /api/pedidos (criação de pedido completo)
+    • Testar validação de produtos inexistentes
+    • Testar validação de estoque insuficiente
+    • Testar GET /api/pedidos/cliente/{id} (histórico do cliente)
+    • Testar PUT /api/pedidos/{id}/status (atualização de status)
+    • Validar cálculos de valor total nos responses
+    • Testar cenários de erro com payloads padronizados
+
+CRITÉRIOS DE AVALIAÇÃO:
+• Uso correto de @SpringBootTest e MockMvc
+• Validação completa de requests e responses
+• Testes de cenários de erro e validação
+• Verificação de persistência no banco de dados
+• Isolamento adequado entre testes
+
+
+📊 ATIVIDADE 3: CONFIGURAÇÃO DE COBERTURA E RELATÓRIOS
+
+OBJETIVO: Configurar ferramentas de cobertura e gerar relatórios de qualidade dos testes
+
+TAREFAS:
+3.1. Configurar JaCoCo para Cobertura
+    • Adicionar plugin JaCoCo no pom.xml
+    • Configurar goals de execução e relatório
+    • Definir regras de cobertura mínima (80% para serviços)
+    • Configurar exclusões para classes de configuração
+
+3.2. Implementar Testes Adicionais para Atingir Cobertura
+    • Identificar métodos não cobertos pelos testes existentes
+    • Implementar testes para atingir meta de 80% de cobertura
+    • Testar métodos de validação e utilitários
+    • Testar construtores e getters/setters quando necessário
+
+3.3. Gerar e Analisar Relatórios
+    • Executar mvn clean test jacoco:report
+    • Analisar relatório HTML gerado
+    • Identificar áreas com baixa cobertura
+    • Documentar métricas de qualidade obtidas
+
+CRITÉRIOS DE AVALIAÇÃO:
+• Configuração correta do JaCoCo
+• Atingimento da meta de 80% de cobertura nos serviços
+• Qualidade dos testes adicionais implementados
+• Análise adequada dos relatórios gerados
+
+
+⚙️ ATIVIDADE 4: CONFIGURAÇÃO DE PERFIS E AUTOMAÇÃO
+
+OBJETIVO: Configurar perfis de teste e automação da execução
+
+TAREFAS:
+4.1. Configurar Perfis de Teste
+    • Criar application-test.properties com configurações específicas
+    • Configurar banco H2 em memória para testes
+    • Definir configurações de logging para testes
+    • Configurar desabilitação de cache durante testes
+
+4.2. Automatizar Execução de Testes
+    • Configurar execução automática via Maven
+    • Criar script para executar testes com relatórios
+    • Configurar falha de build se cobertura < 80%
+    • Documentar comandos para execução local
+
+CRITÉRIOS DE AVALIAÇÃO:
+• Separação adequada de configurações de teste e produção
+• Automação funcional da execução de testes
+• Documentação clara dos procedimentos
+
+
+📦 ENTREGÁVEIS
+
+Ao final da aula, você deve entregar:
+
+1. 📁 CÓDIGO FONTE COMPLETO:
+   • Todas as classes de teste implementadas
+   • Configurações de teste (application-test.properties)
+   • Configuração do JaCoCo no pom.xml
+
+2. 📊 RELATÓRIO DE COBERTURA:
+   • Relatório HTML do JaCoCo
+   • Screenshot mostrando cobertura ≥ 80% nos serviços
+   • Análise das métricas obtidas
+
+3. 📋 DOCUMENTAÇÃO:
+   • README com instruções para executar os testes
+   • Comandos Maven para execução e relatórios
+   • Explicação da estratégia de testes adotada
+
+4. 🎥 DEMONSTRAÇÃO:
+   • Execução dos testes via linha de comando
+   • Apresentação do relatório de cobertura
+   • Demonstração de teste falhando e passando
+
+FORMATO DE ENTREGA:
+• Repositório Git com todo o código
+• Arquivo ZIP com relatórios gerados
+• Documento PDF com análise dos resultados
+
+
+
+
+
+🛠️ RECURSOS E FERRAMENTAS
+
+DEPENDÊNCIAS NECESSÁRIAS:
+• JUnit 5 (jupiter)
+• Mockito
+• Spring Boot Test
+• TestContainers (opcional)
+• JaCoCo (cobertura)
+
+FERRAMENTAS DE DESENVOLVIMENTO:
+• VS Code com extensões Java
+• Maven para build e execução
+• Git para versionamento
+• Navegador para visualizar relatórios
+
+DOCUMENTAÇÃO DE REFERÊNCIA:
+• Spring Boot Testing Guide
+• JUnit 5 User Guide
+• Mockito Documentation
+• JaCoCo Maven Plugin Guide
+
+COMANDOS ÚTEIS:
+• mvn test - Executar todos os testes
+• mvn test -Dtest=ClienteServiceTest - Executar teste específico
+• mvn clean test jacoco:report - Gerar relatório de cobertura
+• mvn test -Dspring.profiles.active=test - Executar com perfil de teste
+
+
+📝 OBSERVAÇÕES IMPORTANTES
+
+⚠️ PONTOS DE ATENÇÃO:
+
+1. ISOLAMENTO DE TESTES:
+   • Cada teste deve ser independente
+   • Use @DirtiesContext quando necessário
+   • Limpe dados entre testes de integração
+
+2. NOMENCLATURA:
+   • Use convenção: should_ReturnExpectedResult_When_ConditionMet
+   • Seja descritivo nos nomes dos métodos de teste
+   • Organize testes em classes separadas por funcionalidade
+
+3. PERFORMANCE:
+   • Testes unitários devem ser rápidos (< 100ms cada)
+   • Use mocks para evitar dependências externas
+   • Configure banco em memória para testes de integração
+
+4. MANUTENIBILIDADE:
+   • Evite duplicação de código nos testes
+   • Use métodos auxiliares para setup comum
+   • Mantenha testes simples e focados
+
+5. COBERTURA:
+   • Foque na qualidade, não apenas na quantidade
+   • Teste comportamentos, não implementação
+   • 80% de cobertura é o mínimo, não o objetivo final
+
+💡 DICAS DE SUCESSO:
+• Escreva testes antes de implementar (TDD)
+• Execute testes frequentemente durante desenvolvimento
+• Use testes como documentação do comportamento esperado
+• Refatore testes junto com código de produção
+
+Seguir para...
+Seguir para...
+    
+© 2020 - 2026 - Escola Técnica FAT - Todos os direitos reservados
+
+
+
+FAT
+Página inicial
+Painel
+Meus cursos
+ 
+
+ 
+ 
+Arquitetura de Sistemas (120h)
+Painel
+Meus cursos
+QSP - AS
+Encontro 21 - Tema 11
+Aula 11 – Escalabilidade e Performance
+Ir para o conteúdo principal
+
+Página
+Aula 11 – Escalabilidade e Performance
+Condições de conclusão
+1. Conceitos Utilizados
+Nesta aula, discutimos os conceitos de escalabilidade e performance em sistemas distribuídos, com foco em aplicações web como o sistema de delivery. Escalabilidade refere-se à capacidade do sistema de lidar com aumento de carga, seja verticalmente (melhor hardware) ou horizontalmente (mais servidores). Performance envolve otimizações para reduzir latência, aumentar throughput e melhorar a experiência do usuário.
+
+2. Aplicação no Dia a Dia
+No sistema de delivery, aplicamos técnicas como:
+✅ Cache para reduzir consultas repetidas ao banco de dados
+✅ Balanceamento de carga para distribuir requisições entre servidores
+✅ Uso de CDN para acelerar entrega de conteúdo estático
+✅ Monitoramento contínuo para identificar gargalos e falhas
+✅ Otimização de consultas SQL e índices
+✅ Escalabilidade automática em nuvem para ajustar recursos conforme demanda
+
+Seguir para...
+Seguir para...
+    
+© 2020 - 2026 - Escola Técnica FAT - Todos os direitos reservados
