@@ -13,3 +13,6 @@ target/
 .mvn/
 mvnw
 mvnw.cmd
+
+# Environment Variables
+.env
